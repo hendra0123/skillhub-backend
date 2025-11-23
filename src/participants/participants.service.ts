@@ -97,7 +97,6 @@ export class ParticipantsService {
 
     Object.assign(participant, updateDto);
 
-    // Fallback extra check lagi (di luar DTO):
     const missingFields: string[] = [];
     if (!participant.nim) missingFields.push('nim');
     if (!participant.full_name) missingFields.push('full_name');

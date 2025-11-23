@@ -27,7 +27,6 @@ export class ClassEntity {
   @CreateDateColumn()
   created_at: Date;
 
-  // Relasi: ONE class bisa punya banyak participants lewat enrollment
   @OneToMany(() => Enrollment, (enrollment) => enrollment.classEntity)
   enrollments: Enrollment[];
 }

@@ -11,12 +11,10 @@ import { EnrollmentsModule } from './enrollments/enrollments.module';
 
 @Module({
   imports: [
-    // Load .env
     ConfigModule.forRoot({
-      isGlobal: true, // biar nggak perlu import ConfigModule di module lain
+      isGlobal: true,
     }),
 
-    // Koneksi ke MySQL lewat env
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
@@ -27,7 +25,7 @@ import { EnrollmentsModule } from './enrollments/enrollments.module';
         password: config.get<string>('DB_PASSWORD'),
         database: config.get<string>('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: true, // dev only, boleh dinyalakan untuk sertifikasi
+        synchronize: true,
       }),
     }),
 

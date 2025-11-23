@@ -107,7 +107,6 @@ describe('ParticipantsService', () => {
     const existing = { ...sampleParticipant };
     const updatedDto = { full_name: 'Nama Baru' };
 
-    // spy findOne agar tidak tergantung ke repo langsung
     const findOneSpy = jest
       .spyOn(service, 'findOne')
       .mockResolvedValue(existing as any);
