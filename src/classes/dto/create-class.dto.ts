@@ -21,5 +21,6 @@ export class CreateClassDto {
 
   @IsString()
   @IsOptional()
+  @IsNotEmpty()
   status?: string; // default akan di-handle oleh entity ("aktif")
 }
